@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- Bulma & FontAwesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .title, .subtitle {
+      font-family: 'Google Sans', sans-serif;
+    }
+    .publication-title {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .authors-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 20px;
+      margin-bottom: 15px;
+    }
+    .author-block {
+      font-size: 1.15rem;
+    }
+    .institutions-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 25px;
+      font-size: 1rem;
+      color: #555;
+    }
+    .publication-links {
+      margin-top: 30px;
+    }
+    .publication-links .button {
+      margin: 5px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+    .publication-links .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .section-light {
+      background-color: #f9f9f9;
+    }
+    .figure-caption {
+      text-align: justify;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      margin-top: 10px;
+      padding: 0 10px;
+    }
+    .highlight-box {
+      background-color: #ffffff;
+      border-left: 4px solid #3273dc;
+      padding: 1.5rem;
+      box-shadow: 0 2px 3px rgba(10,10,10,0.1);
+      margin-bottom: 1.5rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .highlight-box h4 {
+      color: #3273dc;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    /* Academic Table Styles */
+    .academic-table-wrapper {
+      overflow-x: auto;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .academic-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+    .academic-table th, .academic-table td {
+      padding: 10px 8px;
+    }
+    .academic-table th {
+      border-top: 2px solid #000;
+      border-bottom: 1px solid #000;
+      font-weight: 600;
+    }
+    .academic-table tr:last-child td {
+      border-bottom: 2px solid #000;
+    }
+    .academic-table tr.best-result {
+      background-color: #f0f4f8;
+      font-weight: bold;
+    }
+    .academic-table td:first-child, .academic-table th:first-child {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection</h1>
+
+          <!-- Authors (Flex-wrap supports any number of authors seamlessly) -->
+          <div class="authors-wrapper">
+            <span class="author-block"><a href="#">[Author Name 1]</a><sup>1,2</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 2]</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 3]</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 4]</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 5]</a><sup>1,4</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 6]</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 7]</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 8]</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 9]</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">[Author Name 10]</a><sup>1,2</sup></span>
+          </div>
+
+          <!-- Institutions -->
+          <div class="institutions-wrapper">
+            <span class="institution-block"><sup>1</sup>[Institution Name 1]</span>
+            <span class="institution-block"><sup>2</sup>[Institution Name 2]</span>
+            <span class="institution-block"><sup>3</sup>[Institution Name 3]</span>
+            <span class="institution-block"><sup>4</sup>[Institution Name 4]</span>
+          </div>
+
+          <!-- Publication Links -->
+          <div class="publication-links">
+            <!-- Paper Link -->
+            <span class="link-block">
+              <a href="#" class="button is-dark is-outlined">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <!-- HuggingFace Dataset Link -->
+            <span class="link-block">
+              <a href="https://huggingface.co/datasets/zuoenpu/ICML_2026_dataset/tree/main" target="_blank" class="button is-dark is-outlined">
+                <span class="icon" style="font-size: 1.2rem;">🤗</span>
+                <span>HuggingFace</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract Section -->
+<section class="section section-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Privacy protection has become a critical requirement in the era of ubiquitous visual data sharing, imposing higher demands on efficient and robust privacy detection algorithms. However, current robust detection models are severely hindered by the lack of comprehensive datasets. Existing privacy-oriented datasets often suffer from limited scale, coarse-grained annotations, and narrow domain coverage, failing to capture the intricate details of sensitive information in real-world environments. 
+          </p>
+          <p>
+            To bridge this gap, we present a large-scale, fine-grained <strong>V</strong>isual <strong>P</strong>rivacy <strong>D</strong>ataset (<strong>VPD-100K</strong>), designed to facilitate generalized privacy detection. We establish a holistic taxonomy comprising four primary domains: Human Presence, On-Screen Personally Identifiable Information (PII), Physical Identifiers, and Location Indicators. Furthermore, we design an effective frequency-enhanced lightweight module consisting of frequency-domain attention fusion and adaptive spectral gating mechanism that breaks the limitations of spatial pixel intensity to better capture the subtle details of sensitive information. Extensive experiments conducted on both diverse image and streaming video benchmarks consistently demonstrate the effectiveness of our VPD-100K dataset and the well-curated frequency mechanism.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dataset Highlights Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">🎯 The VPD-100K Dataset</h2>
+        <div class="content">
+          <p>
+            Existing datasets overlook critical leakage sources like on-screen PII or suffer from coarse categorization (e.g., just "person" or "text"). <strong>VPD-100K</strong> explicitly addresses these data gaps by covering the full spectrum of privacy risks in unconstrained, complex streaming environments.
+          </p>
+          
+          <div class="columns is-vcentered" style="margin-top: 2rem;">
+            <!-- Taxonomy List -->
+            <div class="column is-half">
+              <div class="highlight-box">
+                <h4>🚀 Massive Scale & Quality</h4>
+                <p><strong>100,000</strong> images with over <strong>190,000</strong> object instances. Over half of the dataset exceeds 1080p resolution to support tiny text recognition.</p>
+              </div>
+              <div class="highlight-box">
+                <h4>🔍 Fine-Grained Taxonomy</h4>
+                <p>Annotated with <strong>33 fine-grained classes</strong> across 4 primary domains:</p>
+                <ul>
+                  <li><strong>Human Presence:</strong> Faces categorized by age and environment.</li>
+                  <li><strong>On-Screen PII:</strong> Passwords, chat logs, accounts, etc.</li>
+                  <li><strong>Physical Identifiers:</strong> Passports, bank cards, tickets.</li>
+                  <li><strong>Location Indicators:</strong> Street, store, and community signs.</li>
+                </ul>
+              </div>
+              <div class="highlight-box">
+                <h4>🛡️ Ethical Scenario Reconstruction</h4>
+                <p>Digital privacy risks (e.g., banking interfaces) are generated via simulated high-fidelity environments without compromising real user data.</p>
+              </div>
+            </div>
+            
+            <!-- Taxonomy Figure -->
+            <div class="column is-half has-text-centered">
+              <figure class="image">
+                <img src="./static/images/figure_1.png" alt="Taxonomy Sunburst Chart of VPD-100K">
+              </figure>
+              <p class="figure-caption">
+                <strong>Figure 1:</strong> The overview of our taxonomy. Our dataset spans 4 broad domains and breaks down into 33 precise, fine-grained categories to cover diverse privacy leakage scenarios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method Section -->
+<section class="section section-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">⚙️ Frequency-Enhanced Mechanism</h2>
+        <div class="content has-text-justified">
+          <p>
+            Traditional Spatial-based detectors often struggle with "camouflaged" or tiny sensitive content (e.g., verification codes that occupy less than 10% of the image). To solve this, we extend the YOLO architecture to a <strong>spatial-frequency dual-stream</strong> model. Our module breaks the limitations of spatial pixel intensity by operating in the frequency domain, remapping features to better capture subtle high-frequency details.
+          </p>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-five-sixths">
+            <figure class="image">
+              <img src="./static/images/figure_2.png" alt="Architecture of the Frequency-Enhanced Mechanism">
+            </figure>
+            <p class="figure-caption has-text-centered">
+              <strong>Figure 2:</strong> The YOLOv10 framework incorporating the frequency domain module within the Neck architecture. It leverages Frequency-Domain Attention Fusion (FDAF) and an Adaptive Spectral Gating Mechanism.
+            </p>
+          </div>
+        </div>
+
+        <div class="content mt-5">
+          <ul>
+            <li><strong>Frequency-Domain Attention Fusion (FDAF):</strong> Applies Discrete Fourier Transform (DFT) to map features, explicitly amplifying high-frequency boundary signals critical for text and structural shapes.</li>
+            <li><strong>Adaptive Spectral Gating Mechanism:</strong> Learns dynamic band-pass filters to suppress background noise while maintaining the activation of privacy-sensitive textures.</li>
+            <li><strong>Frequency-Consistency Loss:</strong> A weighted Euclidean distance constraint that enforces feature alignment between predicted and ground-truth regions directly in the spectral domain.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results Section with Academic Table -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">📊 Benchmark Experiments</h2>
+        
+        <div class="content has-text-justified">
+          <p>
+            We comprehensively evaluated our framework against 14 competitive baselines on the VPD-100K image test dataset. The models were fine-tuned to enable generalizable privacy protection capabilities. As shown in the table below, our Frequency-Enhanced Mechanism (FEM) integrated with YOLOv10L achieves state-of-the-art performance across the board.
+          </p>
+          <p>
+            Specifically, <strong>YOLOv10L+our FEM</strong> achieves the highest Average Precision (<strong>58.6 AP</strong>), showing massive gains (+8.9% AP) over standard models. Crucially, it demonstrates robust detection capabilities for small objects (<strong>36.5 AP<sub>S</sub></strong>) and maintains an impressive F1-Score of <strong>0.81</strong>, all while operating at a real-time latency of just <strong>7.51 ms</strong>.
+          </p>
+        </div>
+
+        <!-- Start of Academic Table -->
+        <div class="academic-table-wrapper">
+          <table class="academic-table">
+            <thead>
+              <tr>
+                <th>Baselines</th>
+                <th>AP<sup>V</sup></th>
+                <th>AP<sub>50</sub><sup>V</sup></th>
+                <th>AP<sub>75</sub><sup>V</sup></th>
+                <th>AP<sub>S</sub><sup>V</sup></th>
+                <th>AP<sub>M</sub><sup>V</sup></th>
+                <th>AP<sub>L</sub><sup>V</sup></th>
+                <th>GFLOPs</th>
+                <th>Latency (ms)</th>
+                <th>F1-Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Grounding-DINO</td>
+                <td>48.1</td>
+                <td>65.8</td>
+                <td>62.6</td>
+                <td>30.4</td>
+                <td>51.3</td>
+                <td>62.3</td>
+                <td>464.0</td>
+                <td>119.5</td>
+                <td>0.68</td>
+              </tr>
+              <tr>
+                <td>FBRT-YOLO</td>
+                <td>20.2</td>
+                <td>45.8</td>
+                <td>42.2</td>
+                <td>28.1</td>
+                <td>46.3</td>
+                <td>56.2</td>
+                <td>22.9</td>
+                <td>3.72</td>
+                <td>0.43</td>
+              </tr>
+              <tr>
+                <td>Gold-YOLO-S</td>
+                <td>46.4</td>
+                <td>63.4</td>
+                <td>52.2</td>
+                <td>25.3</td>
+                <td>51.3</td>
+                <td>63.6</td>
+                <td>46.0</td>
+                <td>3.82</td>
+                <td>0.66</td>
+              </tr>
+              <tr>
+                <td>Gold-YOLO-L</td>
+                <td>52.7</td>
+                <td>70.1</td>
+                <td>58.0</td>
+                <td>32.1</td>
+                <td>57.0</td>
+                <td>70.1</td>
+                <td>153.8</td>
+                <td>10.91</td>
+                <td>0.74</td>
+              </tr>
+              <tr>
+                <td>YOLOv8s</td>
+                <td>44.3</td>
+                <td>60.5</td>
+                <td>51.3</td>
+                <td>24.1</td>
+                <td>50.8</td>
+                <td>59.8</td>
+                <td>26.0</td>
+                <td>7.13</td>
+                <td>0.64</td>
+              </tr>
+              <tr>
+                <td>YOLOv8L</td>
+                <td>52.6</td>
+                <td>68.3</td>
+                <td>59.1</td>
+                <td>32.6</td>
+                <td>58.5</td>
+                <td>67.3</td>
+                <td>152.0</td>
+                <td>14.76</td>
+                <td>0.72</td>
+              </tr>
+              <tr>
+                <td>YOLOv10s</td>
+                <td>46.3</td>
+                <td>62.7</td>
+                <td>51.3</td>
+                <td>26.1</td>
+                <td>53.2</td>
+                <td>62.7</td>
+                <td>23.0</td>
+                <td><strong>2.53</strong></td>
+                <td>0.65</td>
+              </tr>
+              <tr>
+                <td>YOLOv10L</td>
+                <td>53.8</td>
+                <td>69.6</td>
+                <td>58.4</td>
+                <td>33.6</td>
+                <td>59.8</td>
+                <td>70.8</td>
+                <td>121.0</td>
+                <td>7.42</td>
+                <td>0.73</td>
+              </tr>
+              <tr>
+                <td><strong>YOLOv10s+our FEM</strong></td>
+                <td>52.1</td>
+                <td>67.1</td>
+                <td>54.6</td>
+                <td>30.1</td>
+                <td>55.6</td>
+                <td>64.3</td>
+                <td>26.0</td>
+                <td>2.71</td>
+                <td>0.71</td>
+              </tr>
+              <tr class="best-result">
+                <td><strong>YOLOv10L+our FEM</strong></td>
+                <td><strong>58.6</strong></td>
+                <td><strong>73.4</strong></td>
+                <td>61.3</td>
+                <td><strong>36.5</strong></td>
+                <td><strong>62.3</strong></td>
+                <td><strong>70.6</strong></td>
+                <td>132.0</td>
+                <td>7.51</td>
+                <td><strong>0.81</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="figure-caption">
+            <strong>Table 1:</strong> Quantitative results of different baseline approaches on the VPD-100K image test dataset. The best scores are highlighted in bold. For brevity, some intermediate YOLO variants are omitted; refer to the paper for the full 14-baseline comparison.
+          </p>
+        </div>
+        <!-- End of Academic Table -->
+
+        <div class="columns is-centered mt-5">
+          <div class="column is-full">
+            <figure class="image">
+              <img src="./static/images/figure_3.png" alt="Qualitative visual performance comparison">
+            </figure>
+            <p class="figure-caption has-text-centered">
+              <strong>Figure 3:</strong> Visual performance of the proposed Frequency-Enhanced Mechanism. Our framework tightly captures tiny PII structures previously smoothed out by standard spatial convolutions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX Section -->
+<section class="section section-light" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{vpd100k_2026,
+  title     = {VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection},
+  author    = {[Author 1] and [Author 2] and [Author 3] and [Author 4] and others},
+  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website template is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and inspired by benchmark pages like LLaVA and TARGET. <br>
+            Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
